@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-Solution_64MinimumPathSum solution = new Solution_64MinimumPathSum();
+Solution_62UniqePath solution = new Solution_62UniqePath();
 solution.Test();
 
 Console.ReadLine();
