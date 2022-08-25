@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-Solution_5LongestPalindromicSubstring solution = new Solution_5LongestPalindromicSubstring();
+Solution_64MinimumPathSum solution = new Solution_64MinimumPathSum();
 solution.Test();
 
 Console.ReadLine();
