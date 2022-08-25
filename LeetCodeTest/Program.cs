@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-Solution_3LongestSubstringWithoutRepeatingCharacters solution = new Solution_3LongestSubstringWithoutRepeatingCharacters();
+Solution_5LongestPalindromicSubstring solution = new Solution_5LongestPalindromicSubstring();
 solution.Test();
 
 Console.ReadLine();
