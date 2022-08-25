@@ -1,7 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-Solution_62UniqePath solution = new Solution_62UniqePath();
+Solution_63UniqePathII solution = new Solution_63UniqePathII();
 solution.Test();
 
 Console.ReadLine();
