@@ -4,42 +4,23 @@ public class Solution_64MinimumPathSum
 {
     public int MinPathSum(int[][] grid)
     {
-        int rightPath;
-        int downPath;
+        for(int i = 0; i < grid.Length; i++)
+        {
+            for(int j = 0; j < grid[i].Length; j++)
+            {
+                if (i == 0 && j == 0)
+                    continue;
 
-        if(grid.Length == 1)
-            if(grid[0].Length == 1)
-                return grid[0][0];
+                if (i == 0)
+                    grid[i][j] += grid[i][j - 1];
+                else if (j == 0)
+                    grid[i][j] += grid[i - 1][j];
+                else
+                    grid[i][j] += grid[i - 1][j] < grid[i][j - 1] ? grid[i - 1][j] : grid[i][j - 1];
+            }
+        }
 
-        rightPath = FindPath(grid, 0, 0, grid[0][0]);
-        downPath = FindPath(grid, 0, 0, grid[0][0]);
-
-        return rightPath < downPath ? rightPath : downPath;
-    }
-
-    public int FindPath(int[][] grid, int i, int j, int sum)
-    {
-        int right = int.MaxValue;
-        int down = int.MaxValue;
-
-        if (i == grid.Length - 1 && j == grid[0].Length - 1)
-            return sum;
-
-        /* Only go down */
-        if (j == grid[0].Length - 1)
-            return FindPath(grid, i + 1, j, sum + grid[i + 1][j]);
-        /* Only go right */
-        else if (i == grid.Length - 1)
-            return FindPath(grid, i, j + 1, sum + grid[i][j + 1]);
-
-        /* Go right */
-        if ((j + 1) <= grid[0].Length - 1)
-            right = FindPath(grid, i, j + 1, sum + grid[i][j + 1]);
-        /* Go down */
-        if( (i + 1) <= grid.Length - 1)
-            down = FindPath(grid, i + 1, j, sum + grid[i + 1][j]);
-
-        return right < down ? right : down;
+        return grid[grid.Length - 1][grid[0].Length - 1];
     }
 
     public void TestCase(int[][] grid)
