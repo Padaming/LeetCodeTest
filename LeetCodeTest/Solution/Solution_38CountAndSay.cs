@@ -9,8 +9,6 @@
         char prev = ' ';
         int count = 0;
         string result = string.Empty;
-
-        if(s.Count < n - 1)
             
 
         foreach(char c in CountAndSay(n - 1))
